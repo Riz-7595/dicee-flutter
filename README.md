@@ -1,3 +1,1 @@
-# dicee
-
-Random Dice Rolling App.
+Dice Rolling App.
