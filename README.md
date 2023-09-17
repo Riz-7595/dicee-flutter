@@ -1,6 +1,6 @@
 # dicee
 
-A new Flutter project.
+Random Dice Rolling App.
 
 ## Getting Started
 
