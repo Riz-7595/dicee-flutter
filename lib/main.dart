@@ -24,15 +24,19 @@ class Dicee extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              child: TextButton(
                 child: Image.asset("images/dice1.png"),
+                onPressed: () {
+                  print('Left Die');
+                },
               ),
             ),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              child: TextButton(
                 child: Image.asset("images/dice2.png"),
+                onPressed: () {
+                  print('Right Die');
+                },
               ),
             ),
           ],

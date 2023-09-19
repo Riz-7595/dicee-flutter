@@ -1,7 +1,8 @@
-# dicee 
+# Dicee 
 
 Dice Rolling App.
 
-# description
+# Description
 
 This application generates random dice rolls.
+
