@@ -1,4 +1,4 @@
-# Dicee 
+# Dicee
 
 Dice Rolling App.
 
@@ -6,3 +6,4 @@ Dice Rolling App.
 
 This application generates random dice rolls.
 
+Visit 'https://riz-7595.github.io/dicee-flutter/' to see a web version of this application.
