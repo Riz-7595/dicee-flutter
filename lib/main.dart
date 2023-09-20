@@ -15,7 +15,17 @@ void main() {
   );
 }
 
-class Dicee extends StatelessWidget {
+class Dicee extends StatefulWidget {
+  const Dicee({super.key});
+
+  @override
+  State<Dicee> createState() => _DiceeState();
+}
+
+class _DiceeState extends State<Dicee> {
+  int leftDie = 1;
+  int rightDie = 1;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,19 +34,39 @@ class Dicee extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              child: TextButton(
-                child: Image.asset("images/dice1.png"),
-                onPressed: () {
-                  print('Left Die');
-                },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  child: Image.asset("images/dice$leftDie.png"),
+                  onTap: () {
+                    setState(
+                          () {
+                        if (leftDie < 6)
+                          leftDie++;
+                        else
+                          leftDie = 1;
+                      },
+                    );
+                  },
+                ),
               ),
             ),
             Expanded(
-              child: TextButton(
-                child: Image.asset("images/dice2.png"),
-                onPressed: () {
-                  print('Right Die');
-                },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                  child: Image.asset("images/dice$rightDie.png"),
+                  onTap: () {
+                    setState(
+                          () {
+                        if (rightDie < 6)
+                          rightDie++;
+                        else
+                          rightDie = 1;
+                      },
+                    );
+                  },
+                ),
               ),
             ),
           ],
