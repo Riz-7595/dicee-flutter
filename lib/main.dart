@@ -1,8 +1,11 @@
+import "dart:math";
+
 import "package:flutter/material.dart";
 
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
@@ -28,49 +31,40 @@ class _DiceeState extends State<Dicee> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  child: Image.asset("images/dice$leftDie.png"),
-                  onTap: () {
-                    setState(
-                          () {
-                        if (leftDie < 6)
-                          leftDie++;
-                        else
-                          leftDie = 1;
-                      },
-                    );
-                  },
-                ),
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Image.asset("images/dice$leftDie.png"),
+                onTap: () {
+                  setState(
+                    () {
+                      leftDie = Random().nextInt(6) + 1;
+                    },
+                  );
+                },
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  child: Image.asset("images/dice$rightDie.png"),
-                  onTap: () {
-                    setState(
-                          () {
-                        if (rightDie < 6)
-                          rightDie++;
-                        else
-                          rightDie = 1;
-                      },
-                    );
-                  },
-                ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Image.asset("images/dice$rightDie.png"),
+                onTap: () {
+                  setState(
+                    () {
+                      rightDie = Random().nextInt(6) + 1;
+                    },
+                  );
+                },
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
